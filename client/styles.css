@@ -1,86 +1,246 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Roadside Assist - Hire a Mechanic</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <nav class="navbar">
-    <div class="logo">Roadside Assist</div>
-    <button class="menu-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-    <div class="nav-links" id="navLinks">
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#how">How It Works</a></li>
-        <li><a href="#contact" class="btn primary">Book Now</a></li>
-      </ul>
-    </div>
-  </nav>
+/* Base Reset & Font */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  background-color: #f8f8f8;
+  color: #1A1F36;
+  line-height: 1.6;
+  padding-bottom: 2rem;
+}
+.container {
+  padding: 1rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
 
-  <main>
-    <section class="hero container" id="home">
-      <h1>Need a Mechanic Now?</h1>
-      <p>Fast, reliable roadside assistance wherever you are.</p>
-      <a href="#contact" class="btn primary large-btn">Book a Mechanic</a>
-    </section>
+/* Navbar */
+.navbar {
+  background: #1A1F36;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+}
+.logo {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.menu-toggle {
+  background: none;
+  color: white;
+  font-size: 1.75rem;
+  border: none;
+  cursor: pointer;
+}
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #1A1F36;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+.nav-links.open {
+  display: flex;
+}
+.nav-links ul {
+  list-style: none;
+}
+.nav-links li {
+  padding: 0.75rem 1rem;
+}
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+.nav-links .btn {
+  background-color: #FF6A00;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
+  border-radius: 6px;
+  text-align: center;
+}
 
-    <section class="section container" id="services">
-      <h2>Our Services</h2>
-      <div class="service-grid">
-        <div class="service-box">Emergency Repairs</div>
-        <div class="service-box">Battery Replacement</div>
-        <div class="service-box">Flat Tire Fix</div>
-        <div class="service-box">Fuel Delivery</div>
-        <div class="service-box">Lockout Assistance</div>
-        <div class="service-box">Vehicle Towing</div>
-      </div>
-    </section>
+/* Buttons */
+.btn {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  border-radius: 6px;
+  user-select: none;
+}
+.primary {
+  background-color: #FF6A00;
+  color: white;
+}
+.large-btn {
+  font-size: 1.25rem;
+  padding: 1rem 2rem;
+  margin-top: 1rem;
+  min-width: 180px;
+  border-radius: 12px;
+}
 
-    <section class="section container" id="how">
-      <h2>How It Works</h2>
-      <ol class="steps">
-        <li>
-          <div class="step-card">
-            <strong>1.</strong> Tell us the issue
-          </div>
-          <div class="arrow" aria-hidden="true">↓</div>
-        </li>
-        <li>
-          <div class="step-card">
-            <strong>2.</strong> Choose your time
-          </div>
-          <div class="arrow" aria-hidden="true">↓</div>
-        </li>
-        <li>
-          <div class="step-card">
-            <strong>3.</strong> A mechanic comes to you
-          </div>
-        </li>
-      </ol>
-    </section>
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.hero p {
+  font-size: 1.2rem;
+}
 
-    <section class="section cta container" id="contact">
-      <h2>Ready to get help?</h2>
-      <p>Book your mechanic now and get back on the road quickly.</p>
-      <a href="#" class="btn primary large-btn">Book Now</a>
-    </section>
-  </main>
+/* Sections */
+.section {
+  margin: 2rem 0;
+}
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
 
-  <footer>
-    &copy; 2025 Roadside Assist. All rights reserved.
-  </footer>
+/* Services Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
 
-  <script>
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.getElementById('navLinks');
+.service-box {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem 1rem;
+  font-size: 1.2rem;
+  color: #1A1F36;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: default;
+  transition: transform 0.2s ease;
+}
 
-    menuToggle.addEventListener('click', () => {
-      const expanded = menuToggle.getAttribute('aria-expanded') === 'true' || false;
-      menuToggle.setAttribute('aria-expanded', !expanded);
-      navLinks.classList.toggle('open');
-    });
-  </script>
-</body>
-</html>
+.service-box:hover,
+.service-box:focus {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  outline: none;
+}
+
+/* Responsive Grid for Larger Screens */
+@media (min-width: 600px) {
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 900px) {
+  .service-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* How It Works */
+.steps {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.steps li {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.step-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem 1rem;
+  font-size: 1.2rem;
+  color: #1A1F36;
+  font-weight: 600;
+  user-select: none;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: #FF6A00;
+  line-height: 1;
+  margin: 0.5rem 0;
+  user-select: none;
+  animation: bounceArrow 2s infinite;
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+/* CTA */
+.cta {
+  background-color: #1A1F36;
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  border-radius: 8px;
+}
+.cta h2 {
+  font-size: 1.5rem;
+}
+.cta p {
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  background: #1A1F36;
+  color: #ccc;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Desktop Nav */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .nav-links {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    justify-content: flex-end;
+    background: none;
+    width: auto;
+    z-index: auto;
+  }
+  .nav-links li {
+    padding: 0 1rem;
+  }
+}
