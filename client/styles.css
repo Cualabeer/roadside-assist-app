@@ -1,188 +1,20 @@
-/* Base Reset & Font */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Inter', sans-serif;
-  font-size: 18px;
-  background-color: #f8f8f8;
-  color: #1A1F36;
-  line-height: 1.6;
-  padding-bottom: 2rem;
-}
-.container {
-  padding: 1rem;
-}
-
-/* Navbar */
-.navbar {
-  background: #1A1F36;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  position: relative;
-}
-.logo {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
-.menu-toggle {
-  background: none;
-  color: white;
-  font-size: 1.75rem;
-  border: none;
-  cursor: pointer;
-}
-.nav-links {
-  display: none;
-  flex-direction: column;
-  background-color: #1A1F36;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-}
-.nav-links.open {
-  display: flex;
-}
-.nav-links ul {
-  list-style: none;
-}
-.nav-links li {
-  padding: 0.75rem 1rem;
-}
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-size: 1.1rem;
-}
-.nav-links .btn {
-  background-color: #FF6A00;
-  padding: 0.5rem 1rem;
-  margin: 0.5rem 1rem;
-  border-radius: 6px;
-  text-align: center;
-}
-
-/* Buttons */
-.btn {
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  font-weight: 600;
-  border-radius: 6px;
-}
-.primary {
-  background-color: #FF6A00;
-  color: white;
-}
-.large-btn {
-  font-size: 1.25rem;
-  padding: 1rem 2rem;
-  margin-top: 1rem;
-}
-
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-.hero h1 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-.hero p {
-  font-size: 1.2rem;
-}
-
-/* Sections */
-.section {
-  margin: 2rem 0;
-}
-.section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-/* Services Grid */
-.service-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
 .service-box {
   background-color: white;
-  border-left: 6px solid #FF6A00;
-  padding: 1rem;
-  font-size: 1.1rem;
-  border-radius: 6px;
-}
-
-/* Responsive Grid for Larger Screens */
-@media (min-width: 600px) {
-  .service-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media (min-width: 900px) {
-  .service-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-}
-
-/* How It Works */
-.steps {
-  list-style: none;
-  padding-left: 1rem;
-}
-.steps li {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-}
-
-/* CTA */
-.cta {
-  background-color: #1A1F36;
-  color: white;
-  text-align: center;
-  padding: 2rem 1rem;
-  border-radius: 8px;
-}
-.cta h2 {
-  font-size: 1.5rem;
-}
-.cta p {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 1.5rem 1rem;
   font-size: 1.2rem;
+  color: #1A1F36;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: default;
+  transition: transform 0.2s ease;
 }
 
-/* Footer */
-footer {
-  text-align: center;
-  background: #1A1F36;
-  color: #ccc;
-  padding: 1rem;
-  font-size: 0.9rem;
-}
-
-/* Desktop Nav */
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-  .nav-links {
-    display: flex !important;
-    position: static;
-    flex-direction: row;
-    justify-content: flex-end;
-    background: none;
-    width: auto;
-  }
-  .nav-links li {
-    padding: 0 1rem;
-  }
+.service-box:hover,
+.service-box:focus {
+  transform: scale(1.03);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  outline: none;
 }
