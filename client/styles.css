@@ -108,10 +108,34 @@ body {
   font-size: 1.5rem;
   margin-bottom: 1rem;
 }
-.list {
-  list-style: none;
-  padding-left: 1rem;
+
+/* Services Grid */
+.service-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
 }
+.service-box {
+  background-color: white;
+  border-left: 6px solid #FF6A00;
+  padding: 1rem;
+  font-size: 1.1rem;
+  border-radius: 6px;
+}
+
+/* Responsive Grid for Larger Screens */
+@media (min-width: 600px) {
+  .service-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 900px) {
+  .service-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+/* How It Works */
 .steps {
   list-style: none;
   padding-left: 1rem;
